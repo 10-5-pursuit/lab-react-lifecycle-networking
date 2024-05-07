@@ -1,0 +1,17 @@
+
+.pets-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 8% 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.pet {
+    margin: 0 1%;
+}
