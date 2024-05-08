@@ -1,0 +1,7 @@
+aside {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 20px;
+    max-height: fit-content;
+}
