@@ -1,7 +1,18 @@
-export const PetList = () => {
+// PetList.js
+import React from "react";
+
+const PetList = ({ pets }) => {
   return (
     <aside className="pets-list">
-      <p>No pets listed for this employee.</p>
+      {pets.length > 0 ? (
+        <ul>
+          {pets.map((pet) => (
+            <li key={pet.id}>{pet.name}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No pets listed for this employee.</p>
+      )}
     </aside>
   );
 };
