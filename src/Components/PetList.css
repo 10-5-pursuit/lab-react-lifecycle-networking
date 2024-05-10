@@ -1,0 +1,13 @@
+/* PetList.css */
+.pet-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pet-list li {
+  counter-increment: pet-counter;
+}
+
+.pet-list li::before {
+  content: counter(pet-counter) ". ";
+}
