@@ -10,6 +10,9 @@ const [error,setError] = useState();
 const [employees, setEmployees] = useState(null);
 const [isLoading, setIsLoading] = useState(false)
 
+
+// abort controller to cancel any previous request if making a new current request Link: https://www.youtube.com/watch?v=00lxm_doFYw&t=1372s
+
 useEffect(() => {
 
   const fetchEmployees = async () => {
@@ -63,7 +66,7 @@ if(error) {
   return (
     <>
       <NavBar />
-      <EmployeeList />
+      <EmployeeList employees = { employees }/>
     </>
   );
 };
