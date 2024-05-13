@@ -8,7 +8,8 @@ function App () {
 
 const [error,setError] = useState();
 const [employees, setEmployees] = useState(null);
-const [isLoading, setIsLoading] = useState(false)
+const [isLoading, setIsLoading] = useState(false);
+const [pets, setPets] = useState(null)
 
 
 // abort controller to cancel any previous request if making a new current request Link: https://www.youtube.com/watch?v=00lxm_doFYw&t=1372s
@@ -20,19 +21,20 @@ useEffect(() => {
     setIsLoading(true)
 
     try{
-      
+      const petResponse = await fetch("https://vet-app-0obi.onrender.com/api/pets")
       const response = await fetch("https://vet-app-0obi.onrender.com/api/employees");
       const employee = (await response.json())
+      const pet =  await (petResponse.json())
       setEmployees(employee);
+      setPets(pet)
 
     } catch (error) {
       setError(error)
     }
-
-    setIsLoading(false)
+    
+    setIsLoading(false);
   }
   fetchEmployees();
-  
 
 
   // fetch("https://vet-app-0obi.onrender.com/api/employees")
@@ -66,7 +68,7 @@ if(error) {
   return (
     <>
       <NavBar />
-      <EmployeeList employees = { employees }/>
+      <EmployeeList employees = { employees } pets = { pets }/>
     </>
   );
 };
