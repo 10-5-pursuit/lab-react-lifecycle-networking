@@ -1,11 +1,14 @@
 // src/Components/Employee/Employee.jsx
 
+import { useState } from "react";
 import PetList from "../PetList/PetList";
 import "./Employee.scss";
 
 export default function Employee({ employee }) {
-  const { firstName, lastName, prefix, postfix, title } = employee;
+  const [showPet, setShowPet] = useState(false);
+  const { id, firstName, lastName, prefix, postfix, title } = employee;
   const fulName = `${firstName} ${lastName}`;
+
   return (
     <article className="employee">
       <h3>
@@ -13,8 +16,8 @@ export default function Employee({ employee }) {
         {postfix != "" && `, ${postfix}`}
       </h3>
       <h4>{title}</h4>
-      <button>Show Pets</button>
-      <PetList />
+      <button onClick={() => setShowPet(!showPet)}>Show Pets</button>
+      {showPet && <PetList employeeID={id} />}
     </article>
   );
 }

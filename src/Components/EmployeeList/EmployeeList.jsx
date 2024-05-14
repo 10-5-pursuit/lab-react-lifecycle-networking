@@ -16,7 +16,6 @@ export default function EmployeeList() {
 
   useEffect(getEmployeeList, []);
 
-  console.log(employeeList);
   return (
     <main>
       <h2>All Staff</h2>
