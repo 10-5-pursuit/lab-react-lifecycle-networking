@@ -1,3 +1,8 @@
+- [MY LIVE SITE URL](
+ https://lifecycle-networking-react-lab.netlify.app/
+)
+---
+
 # React Networking Lab
 
 In this lab, you will build a simple page that will show all of the employees at a local veterinarian hospital by accessing an external API. Then, you will make it so that, by clicking a button, the pets each doctor sees at the hospital appear.
@@ -24,7 +29,9 @@ In this lab, you will build a simple page that will show all of the employees at
 
 1. Deploy this application to Netlify and add the link to your netlify site below:
 
-- [MY LIVE SITE URL]()
+- [MY LIVE SITE URL](
+ https://lifecycle-networking-react-lab.netlify.app/
+)
 
 ## Instructions
 
@@ -44,7 +51,7 @@ You _should not_ change the overall component hierarchy in this application. How
 
 Your instructor will give you the URL for the API you will be accessing. There will be two endpoints you will need to hit.
 
-#### `/api/employees`
+#### `https://vet-app-0obi.onrender.com/api/employees`
 
 Making a GET request to this path will return an array of employees. The response will look similar to the one below.
 
@@ -62,7 +69,7 @@ Making a GET request to this path will return an array of employees. The respons
 ];
 ```
 
-#### `/api/pets`
+#### `https://vet-app-0obi.onrender.com//api/pets`
 
 Making a GET request to this path will return an array of pets. The response will look similar to the one below.
 
