@@ -1,4 +1,6 @@
-import "./NavBar.css";
+// src/Components/NavBar/NavBar.jsx
+
+import "./NavBar.scss";
 
 export const NavBar = () => {
   return (
