@@ -1,8 +1,19 @@
 .employee {
-  border: 1px solid var(--gold);
+ 
   border-radius: 5px;
   padding: 25px;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto;
+  gap: 30px;
+}
+.emp{
+  border: 1px solid var(--gold);
+  width: 250px;
+  height: 230px;
+  padding: 25px;
+
 }
 
 .employee h3 {
