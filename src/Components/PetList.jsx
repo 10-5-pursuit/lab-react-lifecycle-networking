@@ -1,28 +1,36 @@
-export const PetList = ({ employee, pets, viewinfo }) => {
+
+import { useState, useEffect } from "react";
+
+export const PetList = ({ employee, viewinfo }) => {
+
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    fetch('https://vet-app-0obi.onrender.com/api/pets')
+    .then(res => res.json())
+    .then(data => setPets(data))
+  }, [])
+ 
 
 
-  const petByEmployee =
-    pets.filter(pet => {
+  
+  const petByEmployee = pets.filter(pet => {
     return pet.employeeId === employee.id
   });
 
 
   return (
+
+
     <aside className="pets-list">
-      { viewinfo && petByEmployee.length === 0 ? 
-      
-      <p>Awwww</p> : 
-      
-      <>
 
-      { console.log(petByEmployee) }
-
-       {petByEmployee.map(pet => {
-        <p>{ pet.name } </p>
-       })} 
-      </>
-      
+      <p>
+    {
+      petByEmployee.length === 0 ?  <p>No Pets Listed</p> : petByEmployee.map((animals, index) => 
+          `${animals.name}, ` 
+        ) 
       }
+          </p>
 
     </aside>
   );
